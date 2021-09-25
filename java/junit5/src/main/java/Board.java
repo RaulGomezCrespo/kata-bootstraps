@@ -26,4 +26,9 @@ public class Board {
 	public void setCellAtPosition(int x, int y, CellState state) {
 		states[x][y] = state;
 	}
+
+	public Board calculateNextGeneration() {
+		
+		return new Board(getRows(), getColumns());
+	}
 }

@@ -25,4 +25,13 @@ public class BoardTest {
 		Cell cell = board.getCellAtPosition(1, 1);
 		assertEquals(CellState.ALIVE, cell.getState());
 	}
+	
+	@Test
+	public void cellWithLessThanTwoNeighboursDies() {
+		Board board = new Board(5, 4);
+		board.setCellAtPosition(1,1, CellState.ALIVE);
+		Board nextGeneration = board.calculateNextGeneration();
+		Cell cell = nextGeneration.getCellAtPosition(1, 1);
+		assertEquals(CellState.DEAD, cell.getState());
+	}
 }
