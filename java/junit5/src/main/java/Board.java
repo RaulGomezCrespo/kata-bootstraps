@@ -5,7 +5,6 @@ public class Board {
 	private int columns;
 
 	public Board(int rows, int columns) {
-
 		this.rows = rows;
 		this.columns = columns;
 	}
@@ -18,4 +17,7 @@ public class Board {
 		return columns;
 	}
 
+	public Cell getCellAtPosition(int x, int y) {
+		return null;
+	}
 }
