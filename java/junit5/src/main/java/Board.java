@@ -38,7 +38,8 @@ public class Board {
 	}
 
 	private CellState calculateCellStateInNextGeneration(int x, int y) {
-		if (numberOfAliveNeighbours(x, y) == 2) {
+		int aliveNeighbours = numberOfAliveNeighbours(x, y);
+		if (aliveNeighbours == 2 || aliveNeighbours == 3) {
 			return CellState.ALIVE;
 		}
 		return CellState.DEAD;
