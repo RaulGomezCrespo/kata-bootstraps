@@ -1,27 +1,29 @@
-
 public class Board {
 
-	private int rows;
-	private int columns;
+	private CellState[][] states;
 
 	public Board(int rows, int columns) {
-		this.rows = rows;
-		this.columns = columns;
+		this.states = new CellState[rows][columns];
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < columns; j++) {
+				this.states[i][j] = CellState.DEAD;
+			}
+		}
 	}
 
 	public int getRows() {
-		return rows;
+		return states.length;
 	}
 
 	public int getColumns() {
-		return columns;
+		return states[0].length;
 	}
 
 	public Cell getCellAtPosition(int x, int y) {
-		return new Cell(CellState.DEAD);
+		return new Cell(states[x][y]);
 	}
 
-	public void setCellAtPosition(int i, int j, CellState alive) {
-		
+	public void setCellAtPosition(int x, int y, CellState state) {
+		states[x][y] = state;
 	}
 }
