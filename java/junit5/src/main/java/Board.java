@@ -18,6 +18,10 @@ public class Board {
 	}
 
 	public Cell getCellAtPosition(int x, int y) {
-		return new Cell(CellState.ALIVE);
+		return new Cell(CellState.DEAD);
+	}
+
+	public void setCellAtPosition(int i, int j, CellState alive) {
+		
 	}
 }

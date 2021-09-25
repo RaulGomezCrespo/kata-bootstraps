@@ -12,8 +12,16 @@ public class BoardTest {
 	}
 
 	@Test
-	public void cellIsInitiallyAlive() {
+	public void cellIsInitiallyDead() {
 		Board board = new Board(5, 4);
+		Cell cell = board.getCellAtPosition(1, 1);
+		assertEquals(CellState.DEAD, cell.getState());
+	}
+	
+	@Test
+	public void setCellAlive() {
+		Board board = new Board(5, 4);
+		board.setCellAtPosition(1,1, CellState.ALIVE);
 		Cell cell = board.getCellAtPosition(1, 1);
 		assertEquals(CellState.ALIVE, cell.getState());
 	}
