@@ -1,9 +1,12 @@
 public class Cell {
-    public Cell(CellState state) {
+    private CellState state;
+
+	public Cell(CellState state) {
+		this.state = state;
 
     }
 
     public CellState getState() {
-        return null;
+        return state;
     }
 }
