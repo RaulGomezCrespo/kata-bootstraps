@@ -48,6 +48,40 @@ public class Board {
 		// X X X
 		// X O X
 		// X X X
-		return 0;
+		int aliveNeighbours = 0;
+		
+		if(x - 1 >= 0 && y - 1 >= 0 && getCellAtPosition(x - 1, y - 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(y - 1 >= 0 && getCellAtPosition(x, y - 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(x + 1 < getRows() && y - 1 >= 0 && getCellAtPosition(x + 1, y - 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(x - 1 >= 0 && getCellAtPosition(x - 1, y).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(x + 1 < getRows() && getCellAtPosition(x + 1, y).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(y + 1 < getColumns() && x - 1 >= 0 && getCellAtPosition(x - 1, y + 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(y + 1 < getColumns() && getCellAtPosition(x, y + 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		if(x + 1 < getRows() && y + 1 < getColumns() && getCellAtPosition(x + 1, y + 1).getState() == CellState.ALIVE) {
+			aliveNeighbours++;
+		}
+		
+		return aliveNeighbours;
 	}
 }
