@@ -34,4 +34,15 @@ public class BoardTest {
 		Cell cell = nextGeneration.getCellAtPosition(1, 1);
 		assertEquals(CellState.DEAD, cell.getState());
 	}
+	
+	@Test
+	public void cellWithTwoNeighboursSurvives() {
+		Board board = new Board(5, 4);
+		board.setCellAtPosition(1,1, CellState.ALIVE);
+		board.setCellAtPosition(0,1, CellState.ALIVE);
+		board.setCellAtPosition(1,0, CellState.ALIVE);
+		Board nextGeneration = board.calculateNextGeneration();
+		Cell cell = nextGeneration.getCellAtPosition(1, 1);
+		assertEquals(CellState.ALIVE, cell.getState());
+	}
 }
