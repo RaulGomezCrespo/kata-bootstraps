@@ -1,16 +1,21 @@
 
 public class Board {
 
+	private int rows;
+	private int columns;
+
 	public Board(int rows, int columns) {
-		
+
+		this.rows = rows;
+		this.columns = columns;
 	}
 
 	public int getRows() {
-		return 0;
+		return rows;
 	}
 
 	public int getColumns() {
-		return 0;
+		return columns;
 	}
 
 }
