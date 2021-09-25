@@ -28,7 +28,26 @@ public class Board {
 	}
 
 	public Board calculateNextGeneration() {
-		
-		return new Board(getRows(), getColumns());
+		Board nextGeneration = new Board(getRows(), getColumns());
+		for (int i = 0; i < getRows(); i++) {
+			for (int j = 0; j < getColumns(); j++) {
+				nextGeneration.setCellAtPosition(i, j, calculateCellStateInNextGeneration(i, j));
+			}
+		}
+		return nextGeneration;
+	}
+
+	private CellState calculateCellStateInNextGeneration(int x, int y) {
+		if (numberOfAliveNeighbours(x, y) == 2) {
+			return CellState.ALIVE;
+		}
+		return CellState.DEAD;
+	}
+
+	private int numberOfAliveNeighbours(int x, int y) {
+		// X X X
+		// X O X
+		// X X X
+		return 0;
 	}
 }
