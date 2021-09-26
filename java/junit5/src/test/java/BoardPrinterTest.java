@@ -12,6 +12,18 @@ public class BoardPrinterTest {
 		assertEquals(".....\r\n" + 
 				".....\r\n" + 
 				".....\r\n" + 
-				".....", actualBoard );
+				".....", actualBoard);
+	}
+
+	@Test
+	public void printBoardWithSomeCellsAlive() {
+		BoardPrinter printer = new BoardPrinter();
+		Board board = new Board(5,4);
+		board.setCellAtPosition(1, 1, CellState.ALIVE);
+		String actualBoard = printer.print(board);
+		assertEquals(".....\r\n" +
+				".o...\r\n" +
+				".....\r\n" +
+				".....", actualBoard);
 	}
 }
