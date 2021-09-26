@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class GameOfLife {
 
@@ -14,15 +13,8 @@ public class GameOfLife {
 			System.out.println(boardAsString);
 			System.out.println("Generation: " + i);
 			board = board.calculateNextGeneration();
-			//waitForAnyKey();
 			Thread.sleep(500);
 		}
-	}
-
-	private static void waitForAnyKey() {
-		System.out.println("Press any key to continue...");
-		Scanner sc = new Scanner(System.in);
-		sc.nextLine();
 	}
 
 	private static void randomizeBoard(Board board) {
