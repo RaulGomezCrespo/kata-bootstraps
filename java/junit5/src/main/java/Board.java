@@ -39,7 +39,7 @@ public class Board {
 
 	private CellState calculateCellStateInNextGeneration(int x, int y) {
 		int aliveNeighbours = numberOfAliveNeighbours(x, y);
-		boolean currentCellIsAlive = getCellAtPosition(x, y).getState() == CellState.ALIVE;
+		boolean currentCellIsAlive = isCellAtPositionAlive(x, y);
 		if ((currentCellIsAlive  && aliveNeighbours == 2) || aliveNeighbours == 3) {
 			return CellState.ALIVE;
 		}
