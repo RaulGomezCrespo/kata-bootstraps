@@ -1,5 +1,6 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BoardPrinterTest {
 
@@ -7,7 +8,7 @@ public class BoardPrinterTest {
 	public void printEmptyBoard() {
 		BoardPrinter printer = new BoardPrinter();
 		Board board = new Board(5,4);
-		String actualBoard = printer.print(board );
+		String actualBoard = printer.print(board);
 		assertEquals(".....\r\n" + 
 				".....\r\n" + 
 				".....\r\n" + 
