@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class GameOfLife {
 
-	public static void main(String[] args) {
-		int maxGenerations = 10;
-		Board board = new Board(5, 4);
+	public static void main(String[] args) throws InterruptedException {
+		int maxGenerations = 100;
+		Board board = new Board(20, 15);
 		randomizeBoard(board);
 		BoardPrinter boardPrinter = new BoardPrinter();
 
@@ -14,7 +14,8 @@ public class GameOfLife {
 			System.out.println(boardAsString);
 			System.out.println("Generation: " + i);
 			board = board.calculateNextGeneration();
-			waitForAnyKey();
+			//waitForAnyKey();
+			Thread.sleep(500);
 		}
 	}
 
