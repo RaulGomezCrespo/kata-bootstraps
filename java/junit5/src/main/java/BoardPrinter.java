@@ -5,7 +5,12 @@ public class BoardPrinter {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < board.getColumns(); i++) {
 			for (int j = 0; j < board.getRows(); j++) {
-				sb.append(".");
+				if(board.isCellAtPositionAlive(i, j)) {
+					sb.append("o");
+				} else {
+					sb.append(".");
+				}
+				
 			}
 			if (i + 1 != board.getColumns()) {
 				sb.append("\r\n");

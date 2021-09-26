@@ -84,7 +84,7 @@ public class Board {
 		return aliveNeighbours;
 	}
 
-	private boolean isCellAtPositionAlive(int x, int y) {
+	public boolean isCellAtPositionAlive(int x, int y) {
 		if (x < 0 || y < 0 || x >= getRows() || y >= getColumns()) {
 			return false;
 		}
