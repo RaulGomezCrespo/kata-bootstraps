@@ -62,4 +62,22 @@ public class BoardTest {
 		Cell cell = nextGeneration.getCellAtPosition(1, 1);
 		assertEquals(CellState.ALIVE, cell.getState());
 	}
+	
+	@Test
+	public void cellWithFourNeighboursSurvives() {
+		// given
+		Board board = new Board(5, 4);
+		board.setCellAtPosition(1,1, CellState.ALIVE);
+		board.setCellAtPosition(0,1, CellState.ALIVE);
+		board.setCellAtPosition(1,0, CellState.ALIVE);
+		board.setCellAtPosition(1,2, CellState.ALIVE);
+		board.setCellAtPosition(2,2, CellState.ALIVE);
+
+		// when
+		Board nextGeneration = board.calculateNextGeneration();
+
+		// then
+		Cell cell = nextGeneration.getCellAtPosition(1, 1);
+		assertEquals(CellState.DEAD, cell.getState());
+	}
 }
