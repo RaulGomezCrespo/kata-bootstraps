@@ -47,40 +47,37 @@ public class Board {
 	}
 
 	private int numberOfAliveNeighbours(int x, int y) {
-		// X X X
-		// X O X
-		// X X X
 		int aliveNeighbours = 0;
 		
-		if(x - 1 >= 0 && y - 1 >= 0 && isCellAtPositionAlive(x - 1, y - 1)) {
+		if(isCellAtPositionAlive(x - 1, y - 1)) {
 			aliveNeighbours++;
 		}
 		
-		if(y - 1 >= 0 && isCellAtPositionAlive(x, y - 1)) {
+		if(isCellAtPositionAlive(x, y - 1)) {
 			aliveNeighbours++;
 		}
 		
-		if(x + 1 < getRows() && y - 1 >= 0 && isCellAtPositionAlive(x + 1, y - 1)) {
+		if(isCellAtPositionAlive(x + 1, y - 1)) {
 			aliveNeighbours++;
 		}
 		
-		if(x - 1 >= 0 && isCellAtPositionAlive(x - 1, y)) {
+		if(isCellAtPositionAlive(x - 1, y)) {
 			aliveNeighbours++;
 		}
 		
-		if(x + 1 < getRows() && isCellAtPositionAlive(x + 1, y)) {
+		if(isCellAtPositionAlive(x + 1, y)) {
 			aliveNeighbours++;
 		}
 		
-		if(y + 1 < getColumns() && x - 1 >= 0 && isCellAtPositionAlive(x - 1, y + 1)) {
+		if(isCellAtPositionAlive(x - 1, y + 1)) {
 			aliveNeighbours++;
 		}
 		
-		if(y + 1 < getColumns() && isCellAtPositionAlive(x, y + 1)) {
+		if(isCellAtPositionAlive(x, y + 1)) {
 			aliveNeighbours++;
 		}
 		
-		if(x + 1 < getRows() && y + 1 < getColumns() && isCellAtPositionAlive(x + 1, y + 1)) {
+		if(isCellAtPositionAlive(x + 1, y + 1)) {
 			aliveNeighbours++;
 		}
 		
@@ -88,6 +85,9 @@ public class Board {
 	}
 
 	private boolean isCellAtPositionAlive(int x, int y) {
+		if (x < 0 || y < 0 || x >= getRows() || y >= getColumns()) {
+			return false;
+		}
 		return getCellAtPosition(x, y).getState() == CellState.ALIVE;
 	}
 }
